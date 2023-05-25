@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "PaymentService";
+
+service PaymentService{
+  rpc CheckUserBalance(User) returns(response);
+}
+
+message User{
+  int32 userId=1;
+  int32 OrderPrice=2;
+}
+
+message response{
+  bool HasEnoughBalance=1;
+  string Message=2;
+}
